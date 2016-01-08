@@ -121,9 +121,82 @@ footer a:focus strong {
 	color: #ff3c58;
 }
 
+nav {
+	margin: 20px 0 0 0;
+	padding: 15px 0 0 0;
+	text-align: center;
+	height: 50px;
+	border-top: 1px solid #bbb;
+}
 
+nav ul {
+	margin: 0 auto;
+	padding: 0 25px;
+	line-height: 1.5em;
+	height: 50px;
+	z-index: 20;
+	position: relative;
+	white-space: nowrap;
+}
 
+nav ul li {
+	display: inline-block;
+	padding: 0 20px;
+	margin: 0;
+	list-style: none;
+	background: #fff;
+	line-height: 50px;
+	font-size: 0.8em;
+	letter-spacing: 2px;
+	font-weight: bold;
+}
 
+nav ul li a {
+	border-bottom: none;
+	text-transform: uppercase;
+}
+
+nav ul li a.selected {
+	color: #ff3c58;
+}
+
+p {
+	padding: 0;
+	margin: 15px 0;
+}
+
+h2 {
+	font-variant: small-caps;
+	font-size: 2.4em;
+	margin: 0 0 30px 0;
+	padding: 0;
+	vertical-align: middle;
+}
+
+h2 img {
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+	padding-right: 10px;
+	margin-top: -3px;
+}
+
+h2 span {
+	vertical-align: middle;
+}
+
+h2 span.comingsoon {
+	font-size: 0.4em;
+	vertical-align: super;
+	color: #aaa;
+}
+
+h3 {
+	font-size: 1.8em;
+	font-variant: small-caps;
+	margin: 80px 0 0 0;
+	padding: 0;
+}
 
 
 
