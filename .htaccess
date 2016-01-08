@@ -1,3 +1,12 @@
+RewriteEngine On 
+RewriteBase /
+
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://dodoapps.io/$1 [R,L]
+
+RewriteCond %{HTTP_HOST} ^www.dodoapps.io [NC]
+RewriteRule ^(.*)$ https://dodoapps.io/$1 [L,R=301]
+
 <FilesMatch "\.(php|html|css)$"> 
 ExpiresActive Off 
 Header set Cache-Control "private, no-cache, no-store, proxy-revalidate, no-transform" 

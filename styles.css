@@ -15,7 +15,7 @@ a {
 
 a:hover,
 a:focus {
-	color: #369fe4;
+	color: #ff3c58;
 	border-bottom: none;
 }
 
@@ -97,6 +97,34 @@ footer a {
 	color: #666;
 }
 
+footer a:hover,
+footer a:focus {
+	color: #666;
+}
+
 footer strong {
 	color: #333;
 }
+
+footer a:hover strong,
+footer a:focus strong {
+	color: #ff3c58;
+}
+
+#contact-email {
+	display: block;
+	text-align: center;
+	margin: 60px auto;
+	border-bottom: 0;
+	font-size: 3em;
+	font-weight: bold;
+	color: #ff3c58;
+}
+
+
+
+
+
+
+
+
