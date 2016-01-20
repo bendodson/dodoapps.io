@@ -13,6 +13,10 @@ a {
 	border-bottom: 1px solid #999;
 }
 
+.appstore {
+	border-bottom: none;
+}
+
 a:hover,
 a:focus {
 	color: #ff3c58;
