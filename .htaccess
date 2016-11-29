@@ -1,5 +1,10 @@
-<FilesMatch "\.(php|html|css)$"> 
-ExpiresActive Off 
-Header set Cache-Control "private, no-cache, no-store, proxy-revalidate, no-transform" 
-Header set Pragma "no-cache" 
-</FilesMatch> 
+RewriteEngine On 
+RewriteBase /
+
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://dodoapps.io/$1 [R,L]
+
+RewriteCond %{HTTP_HOST} ^www.dodoapps.io [NC]
+RewriteRule ^(.*)$ https://dodoapps.io/$1 [L,R=301]
+
+RewriteRule ^dimensions/(.*)$ /vortech/$1 [R=301,NC,L]
