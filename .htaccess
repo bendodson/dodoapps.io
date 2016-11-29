@@ -1,10 +1,7 @@
-RewriteEngine On 
-RewriteBase /
-
-RewriteCond %{SERVER_PORT} 80 
-RewriteRule ^(.*)$ https://dodoapps.io/$1 [R,L]
-
-RewriteCond %{HTTP_HOST} ^www.dodoapps.io [NC]
-RewriteRule ^(.*)$ https://dodoapps.io/$1 [L,R=301]
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Port} !=443
+RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
 
 RewriteRule ^dimensions/(.*)$ /vortech/$1 [R=301,NC,L]
+
+Header always set Strict-Transport-Security "max-age=31536000"
