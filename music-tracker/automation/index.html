@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name = "viewport" content = "width = 1200">
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../../styles.css" />
+	<title>Automation & Siri Shortcuts | Music Library Tracker | Dodo Apps</title>
+</head>
+<body>
+
+	<div id="wrapper">
+
+		<header>
+			<a href="/">
+				<h1>Dodo Apps</h1>
+				<p>Apps for iPhone, iPad, and Apple Watch</p>
+			</a>
+			<nav>
+				<ul>
+					<li><a href="/music-tracker/">Music Library Tracker</a></li><li><a href="https://itunes.apple.com/us/app/music-tracker-automatic-tracking/id1062583712?ls=1&amp;mt=8">Download</a></li><li><a href="/music-tracker/privacy/">Privacy Policy</a></li><li><a href="/music-tracker/support/">Support</a></li><li><a href="/">Our Other Apps</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div id="content">
+			<h2><img src="https://bendodson.s3.amazonaws.com/dodo/icon-music-tracker.jpg"><span>Automation with Music Library Tracker</span></h2>
+			<p>With the release of iOS 12 and Music Library Tracker v1.6.0, it is now possible to perform some automation whilst monitoring your music library. For example, you can perform searches across date ranges or specific dates to find out the number of tracks that have been added, deleted, or changed. Music Library Tracker exposes data via the x-callback-url mechanic allowing for integration with the Shortcuts app along with Siri (i.e. "Hey Siri, how many songs have been deleted in the past week?")</p>
+			<p>To get this to work, you'll need to download the free <a href="https://itunes.apple.com/gb/app/shortcuts/id915249334?mt=8">Shortcuts app</a> from Apple (previously "Workflow"). You can then use one of the example Shortcuts below or use the following x-callback-url schema:</p>
+
+			<p><strong>Updates for today</strong><br><code>musictracker://updates</code></p>
+			<p><strong>Updates for a specific date</strong><br><code>musictracker://updates?date=<strong>yyyy-MM-dd</strong></code></p>
+			<p><strong>Updates for a date range</strong><br><code>musictracker://updates?from=<strong>yyyy-MM-dd</strong>&to=<strong>yyyy-MM-dd</strong></code></p>
+
+			<p>When specifying a date, it should be in reverse syntax: <strong><code>yyyy-MM-dd</code></strong>. For example, 31st December 2017 would be <code>2017-12-31</code> whereas the 14th February 2018 would be <code>2018-02-14</code>. You can get dates into this format within the Shortcuts app by using the format string <code>yyyy-MM-dd</code> within the Format Date action:</p>
+
+			<img src="http://bendodson.s3.amazonaws.com/dodo/music-tracker-automation/format-date.jpg" width="400px">
+
+			<p>Once you have your URL, you can then use the <strong>Open X-Callback URL</strong> action to open it followed by <strong>Get Variable</strong> with <code>X-Callback Result</code> and <strong>Get Dictionary from Input</strong> to produce a dictionary containing the following keys:</p>
+
+			<ul>
+				<li><code>added</code>: The total number of tracks added to your library</li>
+				<li><code>changed</code>: The total number of tracks with any changes to them</li>
+				<li><code>deleted</code>: The total number of tracks which have been removed from your library</li>
+				<li><code>date</code>: A string that shows the date or date range used for the above results</li>
+			</ul>
+
+			<img src="http://bendodson.s3.amazonaws.com/dodo/music-tracker-automation/parse-dictionary.jpg" width="400px">
+
+			<p>Once a Shortcut has been created, you can set up a voice recording with Siri. This enables you to perform such actions as "Hey Siri, how many songs have been deleted today".</p>
+
+			<h3>Example Shortcuts</h3>
+
+			<p>The links below will open the Shortcuts app on your device (if installed). Please ensure you have Music Library Tracker v1.6.0 or higher (you can see which version you have within the settings screen in the app).</p>
+
+			<ul>
+				<li><strong><a href="https://www.icloud.com/shortcuts/f6d827c62a444206baf7898e9542a87b">Changes to music library today</a></strong></li>
+				<li><strong><a href="https://www.icloud.com/shortcuts/527cc282ce8e4dea8163fe64df7e2bf8">Changes to music library yesterday</a></strong></li>
+				<li><strong><a href="https://www.icloud.com/shortcuts/02f8e88d56294a859ac325324f7644d9">Changes to music library in the past week</a></strong></li>
+				<li><strong><a href="https://www.icloud.com/shortcuts/17e6a0f3f2ff472fa88d3c0942323aa6">Number of songs that have been deleted in the past week</a></strong></li>
+			</ul>
+
+			<h3>Frequently Asked Questions</h3>
+
+			<p><strong>Why have you added automation via x-callback-url rather than a Siri Intent?</strong><br>Good question! Whilst Apple have added support for custom Siri Intents with iOS 12, they are unfortunately fairly limited in what they can do. Whilst they can be called from the Shortcuts app they can't be passed data nor can they return data so their use is really more for displaying something within their own UI. For example, we'd need to build some custom UI into the Music Library Tracker app to let you specify a date range at which point you could save it as a Siri Shortcut; tapping that would give you a response but you wouldn't be able to do anything with that number nor would you be able to dynamically send new dates or ranges to the shortcut with the Shortcuts app.</p>
+
+			<p><strong>Can you add a shortcut for monitoring your library?</strong><br>We did look into this but unfortunately the memory constraints were such that this didn't work reliably enough in the background to be of much use. Whilst we could add a basic shortcut that opens the app to the scanning page (similar to the 3D Touch action on the app icon) this didn't seem like it would be that useful to most people. Please let us know if you'd like this for some reason although we'd always recommend enabling push notifications for automatic tracking as this is far more reliable.</p>
+			
+			<p><strong>Are you planning on adding further automation?</strong><br>We may add extra automation in future such as track metadata but this will be guided by feedback. If you'd like to see something specific, please <a href="/music-tracker/support/">get in touch</a>.</p>
+
+			<p><strong>What if you haven't answered my question here?</strong><br>If your question isn't answered here, please <a href="/music-tracker/support/">contact us</a>.</p>
+
+
+
+
+
+
+			
+
+
+
+		</div>
+		
+		<footer>
+			<p><a href="/"><strong>Dodo Apps Ltd</strong></a> (07856552) is the company name of <a href="https://bendodson.com/">freelance app developer <strong>Ben Dodson</strong></a> registered at <em>The Bristol Office, 2nd Floor, 5 High Street, Westbury on Trym, Bristol, England, BS9 3BY</em></p>
+		</footer>
+
+	</div>
+
+</body>
+</html>
