@@ -34,15 +34,14 @@ a:focus {
 }
 
 #apps {
-	text-align: center;
 	margin: 50px 0;
 }
 
 #apps .app {
-	display: inline-block;
-	width: 400px;
-	padding: 0 18px;
+	padding: 0 18px 0 146px;
 	margin-bottom: 50px;
+	position: relative;
+	min-height: 128px;
 }
 
 #apps .app a {
@@ -50,8 +49,19 @@ a:focus {
 }
 
 #apps .app img {
-	width: 256px;
-	height: 256px;
+	width: 128px;
+	height: 128px;
+	position: absolute;
+	top: -18px;
+	left: 0;
+}
+
+#apps .app h2 {
+	font-variant: normal;
+	font-size: 1.5em;
+	margin: 0 0 10px 0;
+	padding: 0;
+	vertical-align: top;
 }
 
 #apps .app p {
