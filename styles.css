@@ -237,12 +237,8 @@ h4 {
 }
 
 .screenshots .row div {
-	width: 235px;
+	width: 400px;
 	float: left;
-}
-
-.screenshots .mockup div {
-	width: 300px;
 }
 
 .screenshots div ul {
