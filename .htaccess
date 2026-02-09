@@ -6,6 +6,8 @@ RewriteCond %{HTTP_HOST} ^www.dodoapps.io [NC]
 RewriteRule ^(.*)$ https://dodoapps.io/$1 [L,R=301]
 
 RewriteRule ^dimensions/(.*)$ /vortech/$1 [R=301,NC,L]
+RewriteRule ^vortech(.*)$ / [R=301,NC,L]
+RewriteRule ^pocket-rocket(.*)$ / [R=301,NC,L]
 RewriteRule ^music-tracker/(.*)$ /music-library-tracker/$1 [R=301,NC,L]
 
 Header always set Strict-Transport-Security "max-age=31536000"
