@@ -1,13 +1,57 @@
 RewriteEngine On
-RewriteCond %{HTTP:X-Forwarded-Port} !=443
-RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
 
-RewriteCond %{HTTP_HOST} ^www.dodoapps.io [NC]
-RewriteRule ^(.*)$ https://dodoapps.io/$1 [L,R=301]
+<IfModule mod_headers.c>
+	Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
 
-RewriteRule ^dimensions/(.*)$ /vortech/$1 [R=301,NC,L]
-RewriteRule ^vortech(.*)$ / [R=301,NC,L]
-RewriteRule ^pocket-rocket(.*)$ / [R=301,NC,L]
-RewriteRule ^music-tracker/(.*)$ /music-library-tracker/$1 [R=301,NC,L]
+# Browser Note
+RewriteRule ^browser-note/?$ https://bendodson.com/apps/browser-note/ [R=301,NC,L]
+RewriteRule ^browser-note/index\.html$ https://bendodson.com/apps/browser-note/ [R=301,NC,L]
+RewriteRule ^browser-note/support/?$ https://bendodson.com/apps/browser-note/support/ [R=301,NC,L]
+RewriteRule ^browser-note/support/index\.html$ https://bendodson.com/apps/browser-note/support/ [R=301,NC,L]
+RewriteRule ^browser-note/privacy/?$ https://bendodson.com/apps/browser-note/privacy-policy/ [R=301,NC,L]
+RewriteRule ^browser-note/privacy/index\.html$ https://bendodson.com/apps/browser-note/privacy-policy/ [R=301,NC,L]
+RewriteRule ^browser-note/privacy-policy/?$ https://bendodson.com/apps/browser-note/privacy-policy/ [R=301,NC,L]
 
-Header always set Strict-Transport-Security "max-age=31536000"
+# Chaise Longue to 5K
+RewriteRule ^chaise-longue-to-5k/?$ https://bendodson.com/apps/chaise-longue-to-5k/ [R=301,NC,L]
+RewriteRule ^chaise-longue-to-5k/index\.html$ https://bendodson.com/apps/chaise-longue-to-5k/ [R=301,NC,L]
+RewriteRule ^chaise-longue-to-5k/support/?$ https://bendodson.com/apps/chaise-longue-to-5k/support/ [R=301,NC,L]
+RewriteRule ^chaise-longue-to-5k/support/index\.html$ https://bendodson.com/apps/chaise-longue-to-5k/support/ [R=301,NC,L]
+RewriteRule ^chaise-longue-to-5k/privacy/?$ https://bendodson.com/apps/chaise-longue-to-5k/privacy-policy/ [R=301,NC,L]
+RewriteRule ^chaise-longue-to-5k/privacy/index\.html$ https://bendodson.com/apps/chaise-longue-to-5k/privacy-policy/ [R=301,NC,L]
+RewriteRule ^chaise-longue-to-5k/privacy-policy/?$ https://bendodson.com/apps/chaise-longue-to-5k/privacy-policy/ [R=301,NC,L]
+RewriteRule ^chaise-longue-to-5k/media-kit/?$ https://bendodson.com/apps/chaise-longue-to-5k/ [R=301,NC,L]
+RewriteRule ^chaise-longue-to-5k/media-kit/index\.html$ https://bendodson.com/apps/chaise-longue-to-5k/ [R=301,NC,L]
+
+# Music Library Tracker
+RewriteRule ^music-library-tracker/?$ https://bendodson.com/apps/music-library-tracker/ [R=301,NC,L]
+RewriteRule ^music-library-tracker/index\.html$ https://bendodson.com/apps/music-library-tracker/ [R=301,NC,L]
+RewriteRule ^music-library-tracker/support/?$ https://bendodson.com/apps/music-library-tracker/support/ [R=301,NC,L]
+RewriteRule ^music-library-tracker/support/index\.html$ https://bendodson.com/apps/music-library-tracker/support/ [R=301,NC,L]
+RewriteRule ^music-library-tracker/privacy/?$ https://bendodson.com/apps/music-library-tracker/privacy-policy/ [R=301,NC,L]
+RewriteRule ^music-library-tracker/privacy/index\.html$ https://bendodson.com/apps/music-library-tracker/privacy-policy/ [R=301,NC,L]
+RewriteRule ^music-library-tracker/privacy-policy/?$ https://bendodson.com/apps/music-library-tracker/privacy-policy/ [R=301,NC,L]
+RewriteRule ^music-library-tracker/automation/?$ https://bendodson.com/apps/music-library-tracker/ [R=301,NC,L]
+RewriteRule ^music-library-tracker/automation/index\.html$ https://bendodson.com/apps/music-library-tracker/ [R=301,NC,L]
+RewriteRule ^music-library-tracker/media-kit/?$ https://bendodson.com/apps/music-library-tracker/ [R=301,NC,L]
+RewriteRule ^music-library-tracker/media-kit/index\.html$ https://bendodson.com/apps/music-library-tracker/ [R=301,NC,L]
+
+# Old Music Tracker slug
+RewriteRule ^music-tracker/?$ https://bendodson.com/apps/music-library-tracker/ [R=301,NC,L]
+RewriteRule ^music-tracker/index\.html$ https://bendodson.com/apps/music-library-tracker/ [R=301,NC,L]
+RewriteRule ^music-tracker/support/?$ https://bendodson.com/apps/music-library-tracker/support/ [R=301,NC,L]
+RewriteRule ^music-tracker/privacy/?$ https://bendodson.com/apps/music-library-tracker/privacy-policy/ [R=301,NC,L]
+RewriteRule ^music-tracker/privacy-policy/?$ https://bendodson.com/apps/music-library-tracker/privacy-policy/ [R=301,NC,L]
+
+# Return to Dark Tower Assistant
+RewriteRule ^return-to-dark-tower-assistant/?$ https://bendodson.com/apps/return-to-dark-tower-assistant/ [R=301,NC,L]
+RewriteRule ^return-to-dark-tower-assistant/index\.html$ https://bendodson.com/apps/return-to-dark-tower-assistant/ [R=301,NC,L]
+RewriteRule ^return-to-dark-tower-assistant/support/?$ https://bendodson.com/apps/return-to-dark-tower-assistant/support/ [R=301,NC,L]
+RewriteRule ^return-to-dark-tower-assistant/support/index\.html$ https://bendodson.com/apps/return-to-dark-tower-assistant/support/ [R=301,NC,L]
+RewriteRule ^return-to-dark-tower-assistant/privacy/?$ https://bendodson.com/apps/return-to-dark-tower-assistant/privacy-policy/ [R=301,NC,L]
+RewriteRule ^return-to-dark-tower-assistant/privacy/index\.html$ https://bendodson.com/apps/return-to-dark-tower-assistant/privacy-policy/ [R=301,NC,L]
+RewriteRule ^return-to-dark-tower-assistant/privacy-policy/?$ https://bendodson.com/apps/return-to-dark-tower-assistant/privacy-policy/ [R=301,NC,L]
+
+# Everything else on the old Dodo Apps site now points to the apps index.
+RewriteRule ^.*$ https://bendodson.com/apps/ [R=301,L]
